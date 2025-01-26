@@ -5,19 +5,24 @@ const SearchBox = () => {
   const [isFocused, setIsFocused] = useState(false);
 
   return (
-    <div className={`position-relative w-100 max-w-md ${isFocused ? 'shadow-sm' : ''}`}>
-      <div className="position-relative">
+    <div
+      className={`relative w-full max-w-md ${
+        isFocused ? "animate-search-focus" : ""
+      }`}
+    >
+      <div className="relative">
         <Search
-          className={`position-absolute start-3 top-50 translate-middle-y ${
-            isFocused ? 'text-primary' : 'text-secondary'
-          }`}
-          style={{ width: '20px', height: '20px' }}
+          className={`absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 ${
+            isFocused ? "text-primary" : "text-secondary"
+          } transition-colors`}
         />
         <input
           type="text"
           placeholder="Search..."
-          className="form-control ps-5 border rounded-3"
-          style={{ transition: 'all 0.2s ease' }}
+          className="w-full pl-10 pr-4 py-2 rounded-lg border border-gray-200 
+                   focus:outline-none focus:border-primary focus:ring-0
+                   text-secondary-foreground placeholder:text-secondary
+                   transition-all"
           onFocus={() => setIsFocused(true)}
           onBlur={() => setIsFocused(false)}
         />

@@ -2,8 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import 'bootstrap/dist/css/bootstrap.min.css';
-
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -100,14 +98,4 @@
   body {
     @apply bg-background text-foreground;
   }
-}
-
-/* Bootstrap overrides and custom styles */
-.form-control:focus {
-  box-shadow: 0 0 0 0.25rem rgba(155, 135, 245, 0.25);
-  border-color: #9b87f5;
-}
-
-.navbar {
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
